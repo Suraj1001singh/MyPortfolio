@@ -115,6 +115,15 @@ body.dark-theme {
   justify-content: space-between;
   align-items: center;
 }
+.home_logo{
+  width: 40px;
+  fill: var(--title-color);
+  transition: all 0.3s ease-in-out;
+}
+.home_logo:hover{
+  fill: var(--first-color);
+  transform: scale(1.1);
+}
 .nav_logo,
 .nav_toggle {
   color: var(--title-color);

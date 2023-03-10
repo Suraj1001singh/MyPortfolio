@@ -7,10 +7,14 @@ function Card({ image, title, description }) {
       <div class="portfolio_data">
         <h3 class="portfolio_title">{title}</h3>
         <p class="portfolio_description">{description}</p>
-        <a href="" class="button button--flex button--small portfolio_button">
-          Demo
-          <i class="uil uil-arrow-right button_icon"></i>
-        </a>
+        <div class="portfolio_links">
+          <a href="" class="portfolio_icon">
+            <i class="uil uil-eye"></i>
+          </a>
+          <a href="" class="portfolio_icon">
+            <i class="uil uil-github-alt"></i>
+          </a>
+        </div>
       </div>
     </div>
   );

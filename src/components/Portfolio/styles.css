@@ -71,8 +71,35 @@
 /* ------------------------this page styling only----------------- */
 .portfolio_container {
   overflow: initial;
+
+}
+.portfolio_links{
+  display: grid;
+  width: fit-content;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 1rem;
+
+}
+.portfolio_icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: auto;
+  padding: .5rem;
+  border-radius: 50%;
+  background-color: var(--input-color);
+}
+.portfolio_icon i{
+  color: var(--first-color);
+  font-size: var(--h2-font-size);
+}
+.view_btn_container{
+  display: flex;
+  justify-content: flex-end;
 }
 .portfolio_content {
+  justify-content: center;
   padding: 2rem 1rem;
 }
 .portfolio_img {

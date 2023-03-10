@@ -107,9 +107,13 @@
     color: var(--first-color-lighter);
 }
 .footer_copy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: var(--smaller-font-size);
     text-align: center;
-    color: var(--text-color-light);
+    color: #fff;
+    /* color: var(--text-color-light); */
     margin-top: var(--mb-3);
 }
 .footer_title,
@@ -117,4 +121,7 @@
 .footer_link,
 .footer_social{
     color: #FFF;
+}
+.footer_copy svg{
+    fill: #D22B2B;
 }

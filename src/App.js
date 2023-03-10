@@ -11,20 +11,21 @@ import Contact from "./components/Contact/Contact";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
+import ProjectPage from "./components/ProjectPage/ProjectPage";
+import HomePage from "./components/HomePage/HomePage";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Router>
         <Navbar />
-        <Home />
-        <About />
-        <Skills />
-        <Services />
-        <Portfolio />
-        <Contact />
+        <Switch>
+          <Route exact path={"/"} component={HomePage}></Route>
+          <Route exact path={"/projects"} component={ProjectPage}></Route>
+        </Switch>
         <Footer />
-        <ScrollTop/>
+        <ScrollTop />
       </Router>
     </>
   );

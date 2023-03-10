@@ -68,11 +68,18 @@
 }
 
 /*---------------------------- this page styling------------- */
+.about_data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .about_img {
   width: 200px;
-  border-radius: 0.5rem;
+  border-radius: 50%;
   justify-self: center;
   align-self: center;
+  margin-bottom:2rem;
+  /* border: 10px solid var(--first-color); */
 }
 .about_description{
     text-align: center;

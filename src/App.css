@@ -1,13 +1,13 @@
 /*==================== GOOGLE FONTS ====================*/
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: 3rem;
@@ -160,11 +160,52 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--text-color-light);
 }
+/* --------------GLOWING BORDER */
+.glowing_border{
+  -webkit-box-shadow:0px 0px 9px 6px var(--first-color);
+  -moz-box-shadow: 0px 0px 9px 6px var(--first-color);
+  box-shadow: 0px 0px 9px 6px var(--first-color);
+}
+/* --------------HOME BLOB */
 
+.home_blob {
+	position: relative;
+	background: var(--first-color);
+	border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+  
+  width: 250px;
+  height: 250px;
+  
+	will-change: border-radius, transform, opacity;
+	animation: sliderShape 5s linear infinite;
+	display: block;
+	z-index: -1;
+	-webkit-animation: sliderShape 5s linear infinite;
+}
+@keyframes sliderShape{
+  0%,100%{
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  34%{
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+  }
+  50%{
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  67%{
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+  }
+}
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
 @media screen and (max-width: 350px) {
-  
+  .slider-thumb::before{
+    width: 180px !important;
+    height: 180px !important;
+  }
   .container {
     margin-left: var(--mb-1) !important;
     margin-right: var(--mb-1) !important;
@@ -179,7 +220,8 @@ img {
     grid-template-columns: 0.25fr 3fr !important;
   }
   .home_blob {
-    width: 180px !important;
+    width: 200px !important;
+    height: 200px !important;
   }
   .skills_title {
     font-size: var(--normal-font-size) !important;
@@ -210,6 +252,17 @@ img {
   .testimonial_description {
     text-align: center !important;
   }
+  .skills_tabs{
+    grid-template-columns: repeat(1,150px) !important;
+    grid-gap: .5rem !important;
+  }
+  .skills_list{
+    grid-template-columns: repeat(2,100px) !important;
+    justify-content: center !important;
+  } 
+  .pro_container{
+    grid-template-columns: repeat(1,1fr) !important;
+  }
 }
 
 /* For medium devices */
@@ -222,23 +275,43 @@ img {
     /* good logic to restore default value  */
     grid-column: initial !important;
   }
+  .home_blob {
+    width: 220px !important;
+    height: 220px !important;
+  }
   .home_img {
     order: 1 !important;
     justify-self: center !important;
   }
   .about_container,
   .skills_container,
-  .portfolio_content,
+  
   .project_container,
   .contact_container,
   .footer_container {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+  .portfolio_content{
+    grid-template-columns: repeat(1, 1fr) !important;
+  } 
   .qualification_section {
     display: grid !important;
-    grid-template-columns: 0.6fr !important;
+    grid-template-columns: 1fr !important;
     justify-content: center !important;
   }
+  .skills_tabs{
+    grid-template-columns: repeat(2,200px) !important;
+    grid-gap: .5rem !important;
+  }
+  .skills_list{
+    grid-template-columns: repeat(3,150px) !important;
+    justify-content: center !important;
+  } 
+  .pro_container{
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+  
+    
 }
 
 /* For large devices */
@@ -305,7 +378,8 @@ img {
     column-gap: 2rem !important;
   }
   .home_blob {
-    width: 270px !important;
+    width: 290px !important;
+    height: 290px !important;
   }
   .home_scroll {
     display: block !important;
@@ -317,7 +391,7 @@ img {
     column-gap: 5rem !important;
   }
   .about_img {
-    width: 350px !important;
+    width: 200px !important;
   }
   .about_description {
     text-align: initial !important;
@@ -335,7 +409,7 @@ img {
     margin: 0 var(--mb-1) !important;
   }
   .qualification_section {
-    grid-template-columns: 0.5fr !important;
+    grid-template-columns: 1fr !important;
   }
   .services_container {
     grid-template-columns: repeat(3, 218px) !important;
@@ -389,6 +463,18 @@ img {
   .footer_copy {
     margin-top: 4.5rem !important;
   }
+  .skills_tabs{
+    grid-template-columns: repeat(4,150px) !important;
+    grid-gap: .5rem !important;
+    justify-content: space-evenly !important;
+  }
+  .skills_list{
+    grid-template-columns: repeat(4,150px) !important;
+  }
+  .pro_container{
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+  
 }
 /* For extra large devices */
 @media screen and (min-width: 1024px) {
@@ -408,7 +494,8 @@ img {
     padding: 0 !important;
   }
   .home_blob {
-    width: 380px !important;
+    width: 500px !important;
+    height: 500px !important;
   }
   .home_social {
     transform: translateY(-6rem) !important;
@@ -426,5 +513,17 @@ img {
   }
   .contact_inputs {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .skills_tabs{
+    grid-template-columns: repeat(4,230px);
+    grid-gap: 1.5rem;
+    justify-content: space-evenly !important;
+  }
+  .skills_list{
+    grid-template-columns: repeat(5,185px) !important;
+
+  }
+  .pro_container{
+    grid-template-columns: repeat(3,1fr) !important;
   }
 }

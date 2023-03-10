@@ -1,24 +1,26 @@
 import React from "react";
 import "./styles.css";
-import SwiperPortfolio from "./SwiperPortfolio";
-import SwiperTestimonial from "./SwiperTestimonial";
 import projectImage from "../../assets/img/project.png";
+import Cards from "../Portfolio/Card";
+import portfolioImage1 from "../../assets/img/portfolio1.jpg";
+import portfolioImage2 from "../../assets/img/portfolio2.jpg";
+import portfolioImage3 from "../../assets/img/portfolio3.jpg";
 
-function Portfolio() {
+function ProjectPage(props) {
   return (
     <>
       {/* ---------------------------Portfolio-------------------------- */}
       <section class="portfolio section" id="portfolio">
         <h2 class="section_title">Portfolio</h2>
         <span class="section_subtitle">My most recent work</span>
-        <div class="portfolio_container container ">
-          <SwiperPortfolio></SwiperPortfolio>
-          <div class="view_btn_container">
-            <a href="/projects" class="button button--flex button--small portfolio_button">
-              View All
-              <i class="uil uil-arrow-right button_icon"></i>
-            </a>
-          </div>
+        <div class="pro_container container ">
+          <Cards image={portfolioImage1} title="Modern Websites" description=" Website adaptable to all devices, and animated interaction"></Cards>
+          <Cards image={portfolioImage2} title="Online Store" description=" Website adaptable to all devices, and animated interaction"></Cards>
+          <Cards image={portfolioImage3} title="Brand Design" description=" Website adaptable to all devices, and animated interaction"></Cards>
+          <Cards image={portfolioImage2} title="Online Store" description=" Website adaptable to all devices, and animated interaction"></Cards>
+          <Cards image={portfolioImage3} title="Brand Design" description=" Website adaptable to all devices, and animated interaction"></Cards>
+          <Cards image={portfolioImage2} title="Online Store" description=" Website adaptable to all devices, and animated interaction"></Cards>
+          <Cards image={portfolioImage3} title="Brand Design" description=" Website adaptable to all devices, and animated interaction"></Cards>
         </div>
       </section>
 
@@ -54,4 +56,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default ProjectPage;

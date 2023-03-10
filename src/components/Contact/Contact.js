@@ -14,7 +14,7 @@ function Contact() {
 
               <div>
                 <h3 class="contact_title">Call Me</h3>
-                <span class="contact_subtitle">999-222--3333</span>
+                <span class="contact_subtitle">+917456077167</span>
               </div>
             </div>
             <div class="contact_information">
@@ -22,7 +22,7 @@ function Contact() {
 
               <div>
                 <h3 class="contact_title">Email</h3>
-                <span class="contact_subtitle">alexa@gmail.com</span>
+                <span class="contact_subtitle">suraj1771singh@gmail.com</span>
               </div>
             </div>
             <div class="contact_information">
@@ -30,7 +30,7 @@ function Contact() {
 
               <div>
                 <h3 class="contact_title">Location</h3>
-                <span class="contact_subtitle">Almora - Uttrakhand,India</span>
+                <span class="contact_subtitle">Almora(263601) - Uttrakhand,India</span>
               </div>
             </div>
           </div>

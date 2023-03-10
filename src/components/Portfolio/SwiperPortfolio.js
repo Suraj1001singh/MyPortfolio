@@ -19,13 +19,23 @@ import SwiperCore, { Pagination, Navigation } from "swiper/core";
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
-
-
 export default function SwiperPortfolio() {
   return (
     <>
       <Swiper
-        slidesPerView={1}
+        breakpoints={{
+          // when window width is >= 640px
+          640: {
+            // width: 640,
+            slidesPerView: 2,
+          },
+          // when window width is >= 768px
+          1024: {
+            // width: 768,
+            slidesPerView: 3,
+          },
+        }}
+        // slidesPerView={1}
         spaceBetween={30}
         loop={true}
         pagination={{
@@ -36,28 +46,16 @@ export default function SwiperPortfolio() {
       >
         <SwiperSlide>
           {/* -----------------portfolio 1-------------- */}
-          <Cards
-            image={portfolioImage1}
-            title="Modern Websites"
-            description=" Website adaptable to all devices, and animated interaction"
-          ></Cards>
+          <Cards image={portfolioImage1} title="Modern Websites" description=" Website adaptable to all devices, and animated interaction"></Cards>
         </SwiperSlide>
         <SwiperSlide>
           {" "}
           {/* -----------------portfolio 2-------------- */}
-          <Cards
-            image={portfolioImage2}
-            title="Online Store"
-            description=" Website adaptable to all devices, and animated interaction"
-          ></Cards>
+          <Cards image={portfolioImage2} title="Online Store" description=" Website adaptable to all devices, and animated interaction"></Cards>
         </SwiperSlide>
         <SwiperSlide>
           {/* -----------------portfolio 3-------------- */}
-          <Cards
-            image={portfolioImage3}
-            title="Brand Design"
-            description=" Website adaptable to all devices, and animated interaction"
-          ></Cards>
+          <Cards image={portfolioImage3} title="Brand Design" description=" Website adaptable to all devices, and animated interaction"></Cards>
         </SwiperSlide>
       </Swiper>
     </>

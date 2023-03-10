@@ -68,6 +68,91 @@
 }
 
 /* --------------this page styling ------------------------ */
+
+/* ----------new skills classes */
+.skills_tabs{
+display: grid;
+grid-template-columns: repeat(2,150px);
+grid-gap: 0.5rem;
+justify-content: center;
+
+}
+.skills_tab{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 45px;
+  cursor: pointer;
+  padding: 4px;
+  justify-content: center;
+  border-radius: 40px;
+  transition: all 0.3s ease-in-out;
+  
+}
+.skills_tab_active{
+  background-color: var(--first-color);
+ }
+.skills_tab_active h1,
+.skills_tab_active i {
+  color: #ffffff
+}
+.skills_list {
+  margin-top: 3rem;
+  grid-template-columns: repeat(3,80px);
+  justify-content: center;
+}
+.skills_data,
+.skills_blob{
+  display: grid;
+}
+.skills_data{
+  justify-content: center;
+  text-align: center;
+
+}
+.skills_blob{
+  width:80px;
+  height: 100px;
+  background-color: var(--input-color);
+  border-radius: 3rem;
+  place-items: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+ }
+.skills_blob img{
+  width: 40px;
+}
+.skills_name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: .25rem;
+  text-transform: capitalize;
+}
+
+/* --ANIMATIONS */
+.skills_blob:hover img{
+  animation: bounce-skills .6s;
+}
+@keyframes bounce-skills {
+  0%{
+    transform: translate(0);
+  }
+  20%{
+    transform: translateY(-6px);
+  }
+  40%{
+    transform: translate(0);
+  }
+  60%{
+    transform: translateY(-3px);
+  }
+  80%{
+    transform: translate(0);
+  }
+}
+
+
+/* ----------------------------- */
 .skills_container {
   row-gap: 0;
 }
@@ -82,15 +167,16 @@
   font-size: 2rem;
   color: var(--first-color);
 }
-.skills_list {
-  row-gap: 1.5rem;
-  padding-left: 2.7rem;
-}
+
+
 .skills_icon {
   margin-right: var(--mb-0-75);
+  transition: all 0.3s ease-in-out;
+  
 }
 .skills_title {
   font-size: var(--h3-font-size);
+  transition: all 0.3s ease-in-out;
 }
 .skills_subtitle {
   font-size: var(--small-font-size);
@@ -100,15 +186,13 @@
   margin-left: auto;
   transition: 0.4s;
 }
-.skills_titles {
+/* .skills_titles {
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--mb-0-5);
-}
-.skills_name {
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-medium);
-}
+  
+} */
+
 .skills_bar,
 .skills_percentage {
   height: 5px;
@@ -233,5 +317,6 @@
 }
 .qualification_button_active{
     color: var(--first-color);
+    
 
 }
