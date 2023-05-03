@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
-import portfolioImage1 from "../../assets/img/portfolio1.jpg";
-import portfolioImage2 from "../../assets/img/portfolio2.jpg";
-import portfolioImage3 from "../../assets/img/portfolio3.jpg";
+import project1 from "../../assets/img/project_devcube.png";
+import project2 from "../../assets/img/project_easycart.png";
+import project3 from "../../assets/img/project_crypto.png";
+import project4 from "../../assets/img/project_timesnap.png";
 import Cards from "./Card";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,6 +17,36 @@ import "./styles.css";
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 
+const project_arr = [
+  {
+    title: "DevCube",
+    description: "A web app for developers to create/join rooms and enhance skills.",
+    image: project1,
+    github_link: "https://github.com/suraj1771singh/devcube",
+    project_link: "https://devcube.vercel.app/",
+  },
+  {
+    title: "EasyCart",
+    description: "An e-commerce web application that seamlessly integrates both customer and admin user interfaces.",
+    image: project2,
+    github_link: "https://github.com/suraj1771singh/easycartApp",
+    project_link: "https://easycart.onrender.com/",
+  },
+  {
+    title: "Crypto-Raptor",
+    description: "NFT marketplace platform that allows creators to mint and sell their digital assets as NFTs.",
+    image: project3,
+    github_link: "https://github.com/suraj1771singh/crypto-raptor",
+    project_link: "https://crypto-raptor.vercel.app/",
+  },
+  {
+    title: "TimeSnap",
+    description: "YouTube timestamp generator using machine learning algorithms to enable streamlined navigation.",
+    image: project4,
+    github_link: "https://github.com/suraj1771singh/timesnap",
+    project_link: "https://timesnap.vercel.app/",
+  },
+];
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
@@ -44,19 +75,12 @@ export default function SwiperPortfolio() {
         navigation={true}
         className="mySwiper"
       >
-        <SwiperSlide>
-          {/* -----------------portfolio 1-------------- */}
-          <Cards image={portfolioImage1} title="Modern Websites" description=" Website adaptable to all devices, and animated interaction"></Cards>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          {/* -----------------portfolio 2-------------- */}
-          <Cards image={portfolioImage2} title="Online Store" description=" Website adaptable to all devices, and animated interaction"></Cards>
-        </SwiperSlide>
-        <SwiperSlide>
-          {/* -----------------portfolio 3-------------- */}
-          <Cards image={portfolioImage3} title="Brand Design" description=" Website adaptable to all devices, and animated interaction"></Cards>
-        </SwiperSlide>
+        {project_arr.map((item, ind) => (
+          <SwiperSlide key={ind}>
+            {/* -----------------portfolio 1-------------- */}
+            <Cards image={item.image} title={item.title} description={item.description} github_link={item.github_link} project_link={item.project_link}></Cards>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
