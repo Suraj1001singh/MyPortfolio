@@ -171,7 +171,7 @@ function Skills() {
       img: typescript_logo,
     },
   ];
-  console.log(skills);
+  
   useEffect(() => {
     setSkills(skills_array);
   }, []);

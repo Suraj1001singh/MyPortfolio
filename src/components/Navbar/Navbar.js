@@ -1,9 +1,8 @@
 import React from "react";
 import "./styles.css";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { HashLink, NavHashLink } from "react-router-hash-link";
-import ToggleButton from "../../utils/toggleButton/ToggleButton";
+import { HashLink } from "react-router-hash-link";
 import Toggle from "react-styled-toggle";
 
 function Navbar() {
@@ -12,7 +11,6 @@ function Navbar() {
   const [themeColor, setThemeColor] = useState();
   var r = document.querySelector(":root");
   const onClickHandle = () => {
-    console.log("i am clicked");
     setClick(!click);
   };
   function hslToHex(hue) {
@@ -76,12 +74,10 @@ function Navbar() {
   }
 
   useEffect(() => {
-    console.log(click);
     setThemeColor(r.style.getPropertyValue("--hue-color"));
   }, [click]);
 
   const closeMenu = () => {
-    console.log("close menu clicked");
     setClick(false);
   };
   // -------------------------------------------Dark Mode---------------------------
@@ -108,13 +104,11 @@ function Navbar() {
   const myFunction_set = (color) => {
     // Set the value of variable --blue to another value (in this case "lightblue")
     r.style.setProperty("--hue-color", color);
-    console.log(r.style.getPropertyValue("--hue-color"));
   };
 
   const onClickChangeTheme = (event) => {
     let color = event.target.value;
     setThemeColor(color);
-    console.log("color is", color);
     myFunction_set(color);
   };
 
@@ -123,7 +117,6 @@ function Navbar() {
 
   //destructuring pathname from location
   const { hash } = location;
-  console.log("pathname", hash);
 
   return (
     <header className="header" id="header">
